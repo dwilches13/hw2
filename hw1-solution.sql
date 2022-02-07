@@ -47,7 +47,7 @@ CREATE TABLE movies (
   rated TEXT,
   person_id INTEGER
 );
-
+K 
 CREATE TABLE people (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT
