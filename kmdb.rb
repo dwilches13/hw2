@@ -84,21 +84,21 @@ movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = "2005"
 movie1.rated = "PG-13"
-movie1.person_id = "Christopher Nolan"
+movie1.person_id = "Cristopher Nolan"
 movie1.save
 
 movie2 = Movie.new
 movie2.title = "The Dark Knight"
 movie2.year_released = "2008"
 movie2.rated = "PG-13"
-movie2.person_id = "Christopher Nolan"
+movie2.person_id = "Cristopher Nolan"
 movie2.save
 
 movie3 = Movie.new
 movie3.title = "The Dark Knight Rises"
 movie3.year_released = "2012"
 movie3.rated = "PG-13"
-movie3.person_id = "Christopher Nolan"
+movie3.person_id = "Cristopher Nolan"
 movie3.save
 
 person1 = Person.new
@@ -150,92 +150,92 @@ person12.name = "Christopher Nolan"
 person12.save
 
 role1 = Role.new
-role1.movie_id = 2
-role1.person_id = 1
+role1.movie_id = "Batman Begins"
+role1.person_id = "Christian Bale"
 role1.character_name = "Bruce Wayne"
 role1.save
 
 role2 = Role.new
-role2.movie_id = 2
-role2.person_id = 2
+role2.movie_id = "Batman Begins"
+role2.person_id = "Michael Caine"
 role2.character_name = "Alfred"
 role2.save
 
 role3 = Role.new
-role3.movie_id = 2
-role3.person_id = 3
+role3.movie_id = "Batman Begins"
+role3.person_id = "Liam Neeson"
 role3.character_name = "Ra's Al Ghul"
 role3.save
 
 role4 = Role.new
-role4.movie_id = 2
-role4.person_id = 4
+role4.movie_id = "Batman Begins"
+role4.person_id = "Katie Holmes"
 role4.character_name = "Rachel Dawes"
 role4.save
 
 role5 = Role.new
-role5.movie_id = 2
-role5.person_id = 5
+role5.movie_id = "Batman Begins"
+role5.person_id = "Gary Oldman"
 role5.character_name = "Commissioner Gordon"
 role5.save
 
 role6 = Role.new
-role6.movie_id = 3
-role6.person_id = 1
+role6.movie_id = "The Dark Knight"
+role6.person_id = "Christian Bale"
 role6.character_name = "Bruce Wayne"
 role6.save
 
 role7 = Role.new
-role7.movie_id = 3
-role7.person_id = 6
+role7.movie_id = "The Dark Knight"
+role7.person_id = "Heath Ledger"
 role7.character_name = "Joker"
 role7.save
 
 role8 = Role.new
-role8.movie_id = 3
-role8.person_id = 7
+role8.movie_id = "The Dark Knight"
+role8.person_id = "Aaron Eckhart"
 role8.character_name = "Harvey Dent"
 role8.save
 
 role9 = Role.new
-role9.movie_id = 3
-role9.person_id = 2
+role9.movie_id = "The Dark Knight"
+role9.person_id = "Michael Caine"
 role9.character_name = "Alfred"
 role9.save
 
 role10 = Role.new
-role10.movie_id = 3
-role10.person_id = 8
+role10.movie_id = "The Dark Knight"
+role10.person_id = "Maggie Gyllenhaal"
 role10.character_name = "Rachel Dawes"
 role10.save
 
 role11 = Role.new
-role11.movie_id = 4
-role11.person_id = 1
+role11.movie_id = "The Dark Knight Rises"
+role11.person_id = "Christian Bale"
 role11.character_name = "Bruce Wayne"
 role11.save
 
 role12 = Role.new
-role12.movie_id = 4
-role12.person_id = 5
+role12.movie_id = "The Dark Knight Rises"
+role12.person_id = "Gary Oldman"
 role12.character_name = "Commissioner Gordon"
 role12.save
 
 role13 = Role.new
-role13.movie_id = 4
-role13.person_id = 9
+role13.movie_id = "The Dark Knight Rises"
+role13.person_id = "Tom Hardy"
 role13.character_name = "Bane"
 role13.save
 
 role14 = Role.new
-role14.movie_id = 4
-role14.person_id = 10
+role14.movie_id = "The Dark Knight Rises"
+role14.person_id = "Joseph Gordon-Levitt"
 role14.character_name = "John Blake"
 role14.save
 
 role15 = Role.new
-role15.movie_id = 4
-role15.person_id = 11
+role15.movie_id = "The Dark Knight Rises"
+role15.person_id = "Anne Hathaway"
 role15.character_name = "Selina Kyle"
 role15.save
 
@@ -246,6 +246,26 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
+movie_1 = Movie.where({title: "Batman Begins"})[0]
+movie_2 = Movie.where({title: "The Dark Knight"})[0]
+movie_3 = Movie.where({title: "The Dark Knight Rises"})[0]
+
+person_1 = Person.where({name: "Christian Bale"})[0]
+person_2 = Person.where({name: "Michael Caine"})[0]
+person_3 = Person.where({name: "Liam Neeson"})[0]
+person_4 = Person.where({name: "Katie Holmes"})[0]
+person_5 = Person.where({name: "Gary Oldman"})[0]
+person_6 = Person.where({name: "Heath Ledger"})[0]
+person_7 = Person.where({name: "Aaron Eckhart"})[0]
+person_8 = Person.where({name: "Maggie Gyllenhaal"})[0]
+person_9 = Person.where({name: "Tom Hardy"})[0]
+person_10 = Person.where({name: "Joseph Gordon-Levitt"})[0]
+person_11 = Person.where({name: "Anne Hathaway"})[0]
+person_12 = Person.where({name: "Cristopher Nolan"})[0]
+
+puts movie_1.title, movie_1.year_released, movie_1.rated, movie_1.person_id
+puts movie_2.title, movie_2.year_released, movie_2.rated, movie_2.person_id
+puts movie_3.title, movie_3.year_released, movie_3.rated, movie_3.person_id
 
 # Prints a header for the cast output
 puts ""
@@ -255,3 +275,15 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+role_1 = Role.where({character_name: "Bruce Wayne"})
+role_2 = Role.where({character_name: "Alfred"})
+role_3 = Role.where({character_name: "Ra's Al Ghul"})
+role_4 = Role.where({character_name: "Rachel Dawes"})
+role_5 = Role.where({character_name: "Commissioner Gordon"})
+role_7 = Role.where({character_name: "Joker"})
+role_8 = Role.where({character_name: "Harvey Dent"})
+role_13 = Role.where({character_name: "Bane"})
+role_14 = Role.where({character_name: "John Blake"})
+role_15 = Role.where({character_name: "Selina Kyle"})
+
+puts role_1.movie_id, role_1.person_id, role_1.character_name
